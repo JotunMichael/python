@@ -1,3 +1,4 @@
+git rm --cached /path/to/file || git rm --cached /path/to/file
 docker build .
 docker-compose build
 docker-compose run app sh -c "django-admin.py startproject app ."

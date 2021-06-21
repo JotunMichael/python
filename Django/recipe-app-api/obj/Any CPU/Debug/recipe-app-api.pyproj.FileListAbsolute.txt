@@ -1,1 +1,0 @@
-A:\Documents2\GitHub\python\Django\recipe-app-api\obj\Any CPU\Debug\recipe-app-api.pyproj.CoreCompileInputs.cache
