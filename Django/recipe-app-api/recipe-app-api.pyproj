@@ -58,6 +58,7 @@
   <ItemGroup>
     <Content Include="Dockerfile" />
     <Content Include="LICENSE" />
+    <Content Include=".flake8" />
     <Content Include="README.md" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
@@ -91,6 +92,7 @@
     <Content Include="app\templates\app\loginpartial.html" />
     <Content Include="notes.txt" />
     <Content Include="docker-compose.yml" />
+    <Content Include=".travis.yml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.html">
