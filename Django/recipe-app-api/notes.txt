@@ -1,7 +1,21 @@
 git rm --cached /path/to/file || git rm --cached /path/to/file
 docker build .
-docker-compose build
+docker-compose build 
 docker-compose run app sh -c "django-admin.py startproject app ."
 git add .
 git commit -a
 message pass e.g. Setup docker and Django project :wq
+which flake8
+pip install flake8 //install as admin in cmd//restart bash re-open
+pip show -f flake8
+python -m flake8
+docker-compose run app sh -c "python manage.py test && flake8"
+
+
+
+
+stop docker compose: $ docker-compose down
+
+remove the container: $ docker system prune -a
+
+start docker compose: $ docker-compose up -d
