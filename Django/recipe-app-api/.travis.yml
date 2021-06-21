@@ -1,1 +1,12 @@
-before_script: cd Django/recipe-app-api/
+language: python
+python:
+ -"3.8"
+
+services:
+  - docker
+
+before_script: 
+ - echo 'pip install docker-compose'
+ - echo 'cd Django/recipe-app-api/'
+script: 
+  - docker-compose run app sh -c "python manage.py test && flake8"
