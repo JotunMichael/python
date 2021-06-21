@@ -10,5 +10,5 @@ before_script:
  - 'cd Django/recipe-app-api/'
  - 'pip install docker-compose'
 script:
-  - 'cd Django/recipe-app-api/' 
+  - 'ls -l' 
   - docker-compose run app sh -c "python manage.py test && flake8"
