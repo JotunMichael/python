@@ -12,7 +12,7 @@
     <ProjectGuid>14506479-10c4-4eec-8242-916a67decb8c</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
-    <StartupFile>manage.py</StartupFile>
+    <StartupFile>app\manage.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -37,7 +37,7 @@
     <Compile Include="app\views.py" />
     <Compile Include="app\__init__.py" />
     <Compile Include="app\migrations\__init__.py" />
-    <Compile Include="manage.py" />
+    <Compile Include="app\manage.py" />
     <Compile Include="recipe_app_api\__init__.py" />
     <Compile Include="recipe_app_api\settings.py" />
     <Compile Include="recipe_app_api\urls.py" />
@@ -58,7 +58,7 @@
   <ItemGroup>
     <Content Include="Dockerfile" />
     <Content Include="LICENSE" />
-    <Content Include=".flake8" />
+    <Content Include="app\.flake8" />
     <Content Include="README.md" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
