@@ -5,8 +5,9 @@ python:
 services:
   - docker
   
-before_install: cd Django/recipe-app-api/
+
 before_script: 
- - echo 'pip install docker-compose'
+ - 'cd Django/recipe-app-api/'
+ - 'pip install docker-compose'
 script: 
   - docker-compose run app sh -c "python manage.py test && flake8"
