@@ -1,7 +1,7 @@
 git rm --cached /path/to/file || git rm --cached /path/to/file 
 e.g. git rm --cached Django/ -r
 
-docker build .
+docker build . or not .
 docker-compose build 
 docker-compose run app sh -c "django-admin.py startproject app ."
 git add .
