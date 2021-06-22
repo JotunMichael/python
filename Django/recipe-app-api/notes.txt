@@ -21,3 +21,5 @@ stop docker compose: $ docker-compose down
 remove the container: $ docker system prune -a
 
 start docker compose: $ docker-compose up -d
+
+$ ssh-keygen -t ed25519 -C "your_email@example.com" or -t rsa legacy
