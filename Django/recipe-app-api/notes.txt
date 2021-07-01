@@ -1,18 +1,21 @@
 git rm --cached /path/to/file || git rm --cached /path/to/file 
 e.g. git rm --cached Django/ -r
 
-docker build . or not .
-docker-compose build 
+docker build . or not . 
+docker-compose build //for new req to add to container depencies
 docker-compose run app sh -c "django-admin.py startproject app ."
 git add .
-git commit -a
-message pass e.g. Setup docker and Django project :wq
+git commit -a //message pass e.g. Setup docker and Django project :wq
+git push origin //travis exec auto
+
 which flake8
 pip install flake8 //install as admin in cmd//restart bash re-open
 pip show -f flake8
 python -m flake8
 docker-compose run app sh -c "python manage.py test && flake8"
+docker-compose run app sh -c "python manage.py startapp core"
 
+docker-compose run app sh -c "python manage.py makemigrations core"
 
 
 

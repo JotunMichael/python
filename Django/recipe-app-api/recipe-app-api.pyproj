@@ -36,6 +36,12 @@
     <Compile Include="app\app\wsgi.py" />
     <Compile Include="app\app\__init__.py" />
     <Compile Include="app\manage.py" />
+    <Compile Include="app\app\calc.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app\app\test_1.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\" />
