@@ -1,6 +1,7 @@
 import unittest
 
 from app.calc import add, substract
+# app.app.calc but from docker perspecti app is the root so app.calc
 
 
 class Test_test_1_calc(unittest.TestCase):
