@@ -2,6 +2,6 @@
 recipe app api source code.
 
 Features:\
-  &nbspDocker:\
+  &nbsp; Docker:\
     Backend Rest-API\
     PostGreSQL
