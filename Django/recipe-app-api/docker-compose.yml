@@ -25,4 +25,10 @@ services:
   environment:
    - POSTGRES_DB=app
    - POSTGRES_USER=postgres
-   - POSTGRES_PASSWORD=1234
+   - POSTGRES_PASSWORD=1234 #build server use encrypted environment variable that encrypts so no API keys exposed
+  #expose:
+  # - "5433" # Publishes 5433 to other containers but NOT to host machine
+  ports:
+  - "5433:5432" # out host:docker -terminal bash "docker ps"
+  #volumes:
+  #- ./backups:/home/backups

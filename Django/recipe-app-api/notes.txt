@@ -8,15 +8,20 @@ git add .
 git commit -a //message pass e.g. Setup docker and Django project :wq
 git push origin //travis exec auto
 
+
+
 which flake8
 pip install flake8 //install as admin in cmd//restart bash re-open
 pip show -f flake8
 python -m flake8
-docker-compose run app sh -c "python manage.py test && flake8"
+docker-compose run app sh -c "python manage.py test && flake8" //tests also for refactoring correctness of names
 docker-compose run app sh -c "python manage.py startapp core"
+docker-compose run --rm app sh -c "python manage.py startapp user"// docker-compose down is like --rm clean docker command once and clean
+docker-compose run app sh -c "python manage.py createsuperuser" //---DB SETUP name
+docker-compose run --rm app sh -c "python manage.py test && flake8"
 
 docker-compose run app sh -c "python manage.py makemigrations core"
-docker-compose up //starts migrations for db
+docker-compose up //starts migrations for db ... docker-compose up or down for DB init or del
 
 
 stop docker compose: $ docker-compose down
@@ -26,3 +31,39 @@ remove the container: $ docker system prune -a
 start docker compose: $ docker-compose up -d
 
 $ ssh-keygen -t ed25519 -C "your_email@example.com" or -t rsa legacy
+
+
+
+#####################POSTGRES##################
+psql cmd open
+insert connect info
+\l
+\c "dbname"
+\d or \dt
+
+--docker and postgres ALPINE for local testing only
+docker pull postgres:alpine
+docker images
+docker run --name postgres-0 -e POSTGRES_PASSWORD=password -d -p 5432:5432 postgres:alpine
+docker ps
+docker exec -it postgres-0 bash (or hashID docker ps) <- apo INSIDE container BASH it
+psql --help
+psql -U postgres
+\du
+create database test;
+\l --database shows
+\c test
+\d --no relations apo default
+--apo LOCAL MACHINE CONNECT se CONTAINER psql sto local machine prepi prwta ! ara installed postgres
+less ~/.zshrc <-path for macOS
+psql --help
+psql -h localhost -p 5432 -U postgres -W password (or simply press enter)
+\l <- see databases
+\c test
+create table if not exists student(); --user() is reserved in postgres --no cols
+create table if not exists email(
+id UUID NOT NULL PRIMARY KEY,
+email VARCHAR(200) NOT NULL UNIQUE
+person_uid UUID references person (person_uid)
+);
+https://www.youtube.com/watch?v=qw--VYLpxG4
