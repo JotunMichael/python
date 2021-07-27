@@ -21,12 +21,14 @@ class UserSerializer(serializers.ModelSerializer):
     def update(self, instance, validated_data):
         """Update a user, setting the password correctly and return it"""
         password = validated_data.pop('password', None)
+        # print(validated_data)
         user = super().update(instance, validated_data)
 
         if password:
             user.set_password(password)
             user.save()
         # user.save()
+        # print(user)  # email based user return,print(password)hashed returns
 
         return user
 

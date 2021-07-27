@@ -22,6 +22,7 @@ services:
 
  db:
   image: postgres:13.3-alpine
+  #container_name: postgresql
   environment:
    - POSTGRES_DB=app
    - POSTGRES_USER=postgres
@@ -32,3 +33,9 @@ services:
   - "5433:5432" # out host:docker -terminal bash "docker ps"
   #volumes:
   #- ./backups:/home/backups
+volumes:
+ data: {}
+
+networks:
+ default:
+  name: postgres_network

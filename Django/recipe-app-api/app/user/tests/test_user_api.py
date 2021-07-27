@@ -134,6 +134,8 @@ class PrivateUserApiTests(TestCase):
 
         res = self.client.patch(ME_URL, payload)
         # print(res.data['password'])
+        # print(self.user.password)
+        # print(self.user.password) # if serializers update then hashed return
 
         self.user.refresh_from_db()
         self.assertEqual(self.user.name, payload['name'])

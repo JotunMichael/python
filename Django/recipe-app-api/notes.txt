@@ -20,9 +20,18 @@ docker-compose run --rm app sh -c "python manage.py startapp user"// docker-comp
 docker-compose run app sh -c "python manage.py createsuperuser" //---DB SETUP name
 docker-compose run --rm app sh -c "python manage.py test && flake8"
 
+docker-compose run --rm app sh -c "python manage.py startapp recipe"
+docker-compose run --rm app sh -c "python manage.py makemigrations"
+
+
 docker-compose run app sh -c "python manage.py makemigrations core"
 docker-compose up //starts migrations for db ... docker-compose up or down for DB init or del
+docker compose -d -f custom_name.yaml
+docker compose down // in same dir removes database all data
+docker compose stop //doesnt remove database
+docker compose start
 
+docker ps
 
 stop docker compose: $ docker-compose down
 
