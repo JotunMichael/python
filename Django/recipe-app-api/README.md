@@ -1,5 +1,5 @@
 # recipe-app-api
-recipe app api source code.
+recipe app api source code.\
 Instructor: Mark Winterbottom
 
 Features:\
