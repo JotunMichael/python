@@ -5,6 +5,7 @@ docker build . or not .
 docker-compose build //for new req to add to container depencies
 docker-compose run app sh -c "django-admin.py startproject app ."
 git add .
+git commit -am "message"
 git commit -a //message pass e.g. Setup docker and Django project :wq
 git push origin //travis exec auto
 
