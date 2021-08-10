@@ -53,3 +53,13 @@ class RecipeViewSet(viewsets.ModelViewSet):
             return serializers.RecipeDetailSerializer
 
         return self.serializer_class
+
+    # ModelViewSet allows create obj out of the box
+    # it knows how to create new objs when you do HTTP post
+    # overrides mixins.py perform_create special func
+    # in order to create recipes assign user to auth
+    # user of the recipe to the current authenticated user assign below
+
+    def perform_create(self, serializer):
+        """Create a new recipe"""
+        serializer.save(user=self.request.user)

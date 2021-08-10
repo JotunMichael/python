@@ -44,7 +44,18 @@ start docker compose: $ docker-compose up -d
 
 $ ssh-keygen -t ed25519 -C "your_email@example.com" or -t rsa legacy
 
-
+#api test
+docker-compose up
+localhost:8000/api/user/token // not in Starting development server at http://0.0.0.0:8000/
+http://127.0.0.1:8000/api/user/create/ (endpoint) -> create
+http://127.0.0.1:8000/api/user/token/ (endpoint) -> login with Post
+http://127.0.0.1:8000/api/recipe/tags/ (endpoint) -> vegan
+http://127.0.0.1:8000/api/recipe/ingredients/ (endpoint) -> Limes
+http://127.0.0.1:8000/api/recipe/recipes/ (endpoint) -> Pass Information
+Refresh with enter URL and see List of Objects (proper JSON way) [{},{}...]
+Take Token in Mod Headers
+Name("request headers") -> Authorization
+Value Token 34672746237gdasga83
 
 #####################POSTGRES##################
 psql cmd open
