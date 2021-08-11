@@ -15,8 +15,8 @@ services:
   environment:
    - DB_HOST=db
    - DB_NAME=app
-   - DB_USER=postgres #${POSTGRES_ROOT_USER}
-   - DB_PASS=1234 #${POSTGRES_ROOT_PASSWORD}
+   - DB_USER=${POSTGRES_ROOT_USER}
+   - DB_PASS=${POSTGRES_ROOT_PASSWORD}
   depends_on:
    - db
 
@@ -25,8 +25,8 @@ services:
   #container_name: postgresql
   environment:
    - POSTGRES_DB=app
-   - POSTGRES_USER=postgres #${POSTGRES_ROOT_USER}
-   - POSTGRES_PASSWORD=1234 #${POSTGRES_ROOT_PASSWORD} #build server use encrypted environment variable that encrypts so no API keys exposed
+   - POSTGRES_USER=${POSTGRES_ROOT_USER}
+   - POSTGRES_PASSWORD=${POSTGRES_ROOT_PASSWORD} #build server use encrypted environment variable that encrypts so no API keys exposed
   #expose:
   # - "5433" # Publishes 5433 to other containers but NOT to host machine
   ports:
