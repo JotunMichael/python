@@ -56,6 +56,7 @@ Refresh with enter URL and see List of Objects (proper JSON way) [{},{}...]
 Take Token in Mod Headers
 Name("request headers") -> Authorization
 Value Token 34672746237gdasga83
+http://127.0.0.1:8000/api/recipe/recipes/2/upload-image/ -> image path when complete upload[POST]
 
 #####################POSTGRES##################
 psql cmd open

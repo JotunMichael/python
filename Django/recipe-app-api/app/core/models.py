@@ -89,6 +89,7 @@ class Recipe(models.Model):
     # blank string if you omit on object creation CharField : blank=True
     # null field different more complex
     # null then must  check if its blank or not or has a value in TDD
+    # pass as not function () recipe_image_file_path()
     image = models.ImageField(null=True, upload_to=recipe_image_file_path)
 
     def __str__(self):
