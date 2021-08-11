@@ -72,6 +72,7 @@ docker ps
 docker exec -it hashCodeFromDockerPsContainerID bash
 ls / pwd
 printenv / env
+docker-compose run --rm app sh -c "python manage.py test && flake8"
 ---- see below for postgres connect
 
 #####################POSTGRES##################
