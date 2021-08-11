@@ -45,7 +45,7 @@ start docker compose: $ docker-compose up -d
 $ ssh-keygen -t ed25519 -C "your_email@example.com" or -t rsa legacy
 
 #api test
-docker-compose up
+docker-compose up(start server)
 localhost:8000/api/user/token // not in Starting development server at http://0.0.0.0:8000/
 http://127.0.0.1:8000/api/user/create/ (endpoint) -> create
 http://127.0.0.1:8000/api/user/token/ (endpoint) -> login with Post
@@ -57,6 +57,9 @@ Take Token in Mod Headers
 Name("request headers") -> Authorization
 Value Token 34672746237gdasga83
 http://127.0.0.1:8000/api/recipe/recipes/2/upload-image/ -> image path when complete upload[POST]
+http://127.0.0.1:8000/api/recipe/recipes/?ingredients=2 -> filter ingredients with id
+http://127.0.0.1:8000/api/recipe/recipes/?tags=1 -> filter tags with id
+http://127.0.0.1:8000/api/recipe/recipes/?tags=2&ingredients=2 -> filter both with id
 
 #####################POSTGRES##################
 psql cmd open
