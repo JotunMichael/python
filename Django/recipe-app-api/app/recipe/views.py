@@ -3,6 +3,7 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
+from django.db.models import Q
 
 from core.models import Tag, Ingredient, Recipe
 
@@ -56,15 +57,17 @@ class RecipeViewSet(viewsets.ModelViewSet):
         tags = self.request.query_params.get('tags')
         ingredients = self.request.query_params.get('ingredients')
         queryset = self.queryset
+        # reduced amount of queries
+        # filter once instead of 3
+        filters = Q(user=self.request.user)
         if tags:
             tag_ids = self._params_to_ints(tags)
-            # filter django convetion Foreign key
-            queryset = queryset.filter(tags__id__in=tag_ids)
+            filters &= Q(tags__id__in=tag_ids)
         if ingredients:
             ingredient_ids = self._params_to_ints(ingredients)
-            queryset = queryset.filter(ingredients__id__in=ingredient_ids)
+            filters &= Q(ingredients__id__in=ingredient_ids)
 
-        return queryset.filter(user=self.request.user)
+        return queryset.filter(filters).distinct()
 
     def get_serializer_class(self):
         """Return appropriate serializer class"""

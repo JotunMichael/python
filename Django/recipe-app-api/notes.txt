@@ -60,6 +60,7 @@ http://127.0.0.1:8000/api/recipe/recipes/2/upload-image/ -> image path when comp
 http://127.0.0.1:8000/api/recipe/recipes/?ingredients=2 -> filter ingredients with id
 http://127.0.0.1:8000/api/recipe/recipes/?tags=1 -> filter tags with id
 http://127.0.0.1:8000/api/recipe/recipes/?tags=2&ingredients=2 -> filter both with id
+http://127.0.0.1:8000/api/recipe/recipes/?ingredients=1,2
 
 #####################POSTGRES##################
 psql cmd open
