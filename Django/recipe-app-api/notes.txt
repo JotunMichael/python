@@ -65,6 +65,7 @@ http://127.0.0.1:8000/api/recipe/recipes/?assigned_only=1 -> if assigned to a re
 
 
 ----------env file-----------
+#leak warning gitignore + travis?
 docker-compose build
 docker-compose --env-file .env up / down
 docker ps
