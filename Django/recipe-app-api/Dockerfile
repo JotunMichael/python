@@ -13,7 +13,7 @@ RUN apk del .tmp-build-deps
 RUN mkdir /app
 WORKDIR /app
 COPY ./app /app
-COPY .env /.env
+#COPY .env /.env
 
 RUN mkdir -p /vol/web/media
 RUN mkdir -p /vol/web/static
