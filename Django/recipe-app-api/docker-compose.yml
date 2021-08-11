@@ -15,7 +15,7 @@ services:
   environment:
    - DB_HOST=db
    - DB_NAME=app
-   - DB_USER=postgress #${POSTGRES_ROOT_USER}
+   - DB_USER=postgres #${POSTGRES_ROOT_USER}
    - DB_PASS=1234 #${POSTGRES_ROOT_PASSWORD}
   depends_on:
    - db
